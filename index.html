@@ -8,47 +8,11 @@ Your browser does not support the HTML5 canvas tag.</canvas><br>
 <script>
 var c=document.getElementById('myCanvas');
 var ctx=c.getContext('2d');
-function findI(arr,obj){
-  for(var i=0;i<arr.length;i++){
-    if(arr[i]==obj)
-    return i;
-  }
-  return -1;
-}
 var x=0;
 var y=0;
-function split(){
-var fin=[]
-var t="";
-var command=";"+document.getElementById('command').value;
-for(var i=0;i<command.length;i++){
-if(command.charAt(i)==';'){
-fin.length++;
-for(var ii=i+1;ii<command.length;ii++){
-t+=command.charAt(ii);
-if(command.charAt(ii)==';')
-break;
-}
-fin[fin.length-1]=t;
-}
-}
-for(var i=0;i<fin.length;i++){
-fin[i]=fin[i].replace(/\r?\n|\r/g,'').replace(';','').replace(';','');
-}
-rn(fin);
-}
 function rn(command){
-var comsI=["move.up","move.down","move.left","move.right"];
-var comsP=['y--;','y++;','x--;','x++;'];
-for(var i=0;i<command.length;i++){
-if(findI(comsI,command[i])>-1)
-eval(comsP[findI(comsI,command[i])]);
-}
 ctx.clearRect(0,0,c.width,c.height);
 ctx.fillRect(x,y,20,20);
-}
-function clear(){
-ctx.clearRect(0,0,c.width,c.height);
 }
 </script>
 </body>
