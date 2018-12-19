@@ -22,13 +22,13 @@ window.requestAnimationFrame(draw);
 document.getElementById("myCanvas").onkeydown = move;
 
 function move(){
-if(document.body.querySelector(':hover')==document.getElementById('u'))
+if(u.matches(':hover'))
 x-=2;
-if(document.body.querySelector(':hover')==document.getElementById('d'))
+if(d.matches(':hover'))
 x+=2;
-if(document.body.querySelector(':hover')==document.getElementById('l'))
-y=2;
-if(document.body.querySelector(':hover')==document.getElementById('r'))
+if(l.matches(':hover'))
+y-=2;
+if(r.matches(':hover'))
 y+=2;
 }
 </script>
