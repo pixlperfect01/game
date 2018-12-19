@@ -12,7 +12,7 @@ function run(){
 
 var comsI=["move.up","move.down","move.left","move.right"];
 var comsP=['y--','y++','x--','x++'];
-var command=document.getElementById('command').value;
+var command=document.getElementById('command').value.replace(';','');
 if(comsI.findIndex(command)>-1)
 eval(comsP[comsI.findIndex(command)]);
 ctx.rect(x,y,20,20);
