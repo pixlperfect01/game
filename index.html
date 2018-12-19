@@ -17,8 +17,8 @@ var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 for(var i=0;i<c.width;i+=50){for(var ii=0;ii<c.height;ii+=50){ctx.rect(i,ii,50,50);ctx.stroke();}}
 function draw(){
-ctx.clearRect(px,y,50,50);
-ctx.fillRect(x,y,50,50);
+ctx.clearRect(px+1,py+1,48,48);
+ctx.fillRect(x+1,y+1,48,48);
 px=x;
 py=y;
 window.requestAnimationFrame(draw);
