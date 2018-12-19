@@ -5,7 +5,7 @@
 <canvas id="myCanvas" width="1350" height="590" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 <script>
-var i=0;
+var i=1;
 var s=1;
 function draw(){
 i+=s;
@@ -14,7 +14,7 @@ var ctx = c.getContext("2d");
 ctx.clearRect(0,0,c.width,c.height);
 ctx.fillRect(i,50,50,50);
 window.requestAnimationFrame(draw);
-if(i>=c.width||i<=c.width)
+if(i>=c.width||i<=0)
 s=-s;
 }
 </script>
