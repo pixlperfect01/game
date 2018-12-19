@@ -33,7 +33,7 @@ fin[fin.length-1]=t;
 }
 }
 for(var i=0;i<fin.length;i++){
-fin[i]=fin[i].replace(/\r?\n|\r/,'').replace(';','');
+fin[i]=fin[i].replace(/\r?\n|\r/g,'').replace(';','').replace(';','');
 }
 rn(fin);
 }
