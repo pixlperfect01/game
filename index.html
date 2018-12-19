@@ -8,13 +8,19 @@ Your browser does not support the HTML5 canvas tag.</canvas><br>
 <script>
 var c=document.getElementById('myCanvas');
 var ctx=c.getContext('2d');
+function findI(arr,obj){
+  for(var i=0;i<arr.length;i++){
+    if(arr[i]==obj)
+    return i;
+  }
+  return -1;
+}
 function run(){
-
 var comsI=["move.up","move.down","move.left","move.right"];
-var comsP=['y--','y++','x--','x++'];
+var comsP=['y--;','y++;','x--;','x++;'];
 var command=document.getElementById('command').value.replace(';','');
-if(comsI.findIndex(command)>-1)
-eval(comsP[comsI.findIndex(command)]);
+if(findI(comsI,command)>-1)
+eval(comsP[findI(comsI,command)]);
 ctx.rect(x,y,20,20);
 }
 </script>
