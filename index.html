@@ -3,7 +3,11 @@
 </head>
 <body onload="window.requestAnimationFrame(draw)">
 <canvas id="myCanvas" width="1350" height="590" style="border:1px solid #d3d3d3;">
-Your browser does not support the HTML5 canvas tag.</canvas>
+Your browser does not support the HTML5 canvas tag.</canvas><br>
+<button id="u">UP</button>
+<button id="d">DOWN</button>
+<button id="l">LEFT</button>
+<button id="r">RIGHT</button>
 <script>
 var x=0;
 var y=0;
@@ -12,31 +16,20 @@ var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 ctx.clearRect(0,0,c.width,c.height);
 ctx.fillRect(x,y,50,50);
+move();
 window.requestAnimationFrame(draw);
 }
 document.getElementById("myCanvas").onkeydown = move;
 
-function move(e) {
-
-    e = e || window.event;
-
-    if (e.keyCode == '38') {
-        //return "U";
-      x-=2;
-    }
-    else if (e.keyCode == '40') {
-        //return "D";
-      x+=2;
-    }
-    else if (e.keyCode == '37') {
-        //return "L";
-      y-=2;
-    }
-    else if (e.keyCode == '39') {
-        //return "R";
-      y+=2;
-    }
-
+function move(){
+if(document.body.querySelector(':hover')==document.getElementById('U'))
+x-=2;
+if(document.body.querySelector(':hover')==document.getElementById('D'))
+x+=2;
+if(document.body.querySelector(':hover')==document.getElementById('L'))
+y=2;
+if(document.body.querySelector(':hover')==document.getElementById('R'))
+y+=2;
 }
 </script>
 </body>
