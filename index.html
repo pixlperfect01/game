@@ -6,11 +6,16 @@
 Your browser does not support the HTML5 canvas tag.</canvas><br>
 <input id="command"><input type="submit" onclick="run()">
 <script>
+var c=document.getElementById('myCanvas');
+var ctx=c.getContext('2d');
 function run(){
+
 var comsI=["move.up","move.down","move.left","move.right"];
 var comsP=['y--','y++','x--','x++'];
 var command=document.getElementById('command').value;
+if(comsI.findIndex(command)>-1)
 eval(comsP[comsI.findIndex(command)]);
+ctx.rect(x,y,20,20);
 }
 </script>
 </body>
