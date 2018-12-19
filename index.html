@@ -20,10 +20,11 @@ var y=0;
 function run(){
 var comsI=["move.up","move.down","move.left","move.right"];
 var comsP=['y--;','y++;','x--;','x++;'];
-var command=document.getElementById('command').value.replace(';','');
+var command=document.getElementById('command').value;
 if(findI(comsI,command)>-1)
 eval(comsP[findI(comsI,command)]);
 ctx.rect(x,y,20,20);
+ctx.stroke();
 }
 </script>
 </body>
