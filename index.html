@@ -4,35 +4,13 @@
 <body onload="window.requestAnimationFrame(draw)">
 <canvas id="myCanvas" width="1350" height="550" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas><br>
-<button> </button><button onmousedown="ys=-3" onmouseup="ys=0" id="u">UP</button><button> </button><br>
-<button onmousedown="xs=-3" onmouseup="xs=0" id="l">LEFT</button><button> </button>
-<button onmousedown="xs=3" onmouseup="xs=0" id="r">RIGHT</button><br>
-<button> </button><button onmousedown="ys=3" onmouseup="ys=0" id="d">DOWN</button><button> </button>
+<input id="command"><input type="submit" onclick="run()">
 <script>
-var x=0;
-var y=0;
-var px=x;
-var py=y;
-var xs=0;
-var ys=0;
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-function draw(){
-x+=xs;
-y+=ys;
-if(x<0)
-x=0;
-if(y<0)
-y=0;
-if(x>c.width-50)
-x=c.width-50;
-if(y>c.height-50)
-y=c.height-50;
-ctx.clearRect(px,py,50,50);
-ctx.fillRect(x,y,50,50);
-px=x;
-py=y;
-window.requestAnimationFrame(draw);
+function run(){
+var comsI=["move.up","move.down","move.left","move.right"];
+var comsP=['y--','y++','x--','x++'];
+var command=document.getElementById('command').value;
+eval(comsP[comsI.findIndex(command)]);
 }
 </script>
 </body>
